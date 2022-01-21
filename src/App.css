@@ -161,3 +161,55 @@ body {
 }
 
 
+
+/* Hot Drinks Section */
+
+.drink-card {
+  margin: 3px;
+  padding: 2px;
+  background-color: #ececec;
+  text-decoration: none;
+}
+
+.drink-card h1,
+.drink-card h5 {
+  width: 100%;
+  text-align: left;
+  padding-left: 10px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.drink-card h6 {
+  text-align: left;
+}
+
+.drink-card-image {
+  width: 100%;
+}
+
+
+/* rating section */
+
+.ratings-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 10px;
+  margin: 5px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--secondary-color);
+}
+
+.ratings-bar span {
+  display: flex;
+  align-items: center;
+}
+.fa {
+  color: var(--main-color);
+}

@@ -1,4 +1,7 @@
 import React from 'react'
+import Ratings from './Ratings';
+import { Link } from 'react-router-dom';
+import Image from '../img/gimlet.jpg'
 
 function DrinkCard(props) {
     let newDrinkIngredients = []
@@ -17,18 +20,25 @@ function DrinkCard(props) {
         newDrinkIngredients.push(newDrink['ingredients'][i] + ".")
     }
 }
+    let truncated = () => {
+        if (newDrink['description'].length > 100) {
+            return newDrink['description'].substring(0, 100) + '...';
+        } else {
+            return newDrink['description']
+        }
+    }
     
 
     return (
-        <div className="drink-card">
-            <h1>{newDrink['name']}</h1>
-            <div>
-                <h2>{newDrink['rating']}</h2>
-                <h2>{newDrinkIngredients}</h2>
-                <h3>{newDrink['description']}</h3>
-                <h3>{newDrink['directions']}</h3>
+        <Link to="/drink" drink={drinkData}>
+            <div className="drink-card">
+                <img src={Image} alt="" className="drink-card-image"></img>
+                <h1>{newDrink['name']}</h1>
+                <Ratings stars={newDrink['rating']} />
+                <h5>{newDrinkIngredients}</h5>
+                <h6>{truncated()}</h6>
             </div>
-        </div>
+        </Link>
     )
 
 }
