@@ -14,7 +14,7 @@ function Header() {
                     <span className="line line3"></span>
                 </div>
                 <ul className="menu-items">
-                    <li><a href=""><img className="profile-pic" src=""></img></a></li>
+                    <li><a href="#home"><img className="profile-pic" src="" alt=""></img></a></li>
                     <li><a href="#home">Account</a></li>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Favorites</a></li>

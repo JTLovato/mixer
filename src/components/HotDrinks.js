@@ -9,7 +9,7 @@ function HotDrinks() {
     return (
         
         <div>
-            <h1>Hot Drinks</h1>
+            <h1>Hottest Drinks Now</h1>
             <DrinkCard data={Data} />
             <DrinkCard data={Data} />
             <DrinkCard data={Data} />

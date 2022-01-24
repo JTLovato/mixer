@@ -7,6 +7,7 @@ function DrinkCard(props) {
     let newDrinkIngredients = []
 
     let drinkData = props.data.drinks
+    // console.log(drinkData)
 
     let drinkLength = drinkData.length
 
@@ -14,7 +15,7 @@ function DrinkCard(props) {
 
     let newDrink = drinkData[randomDrink]
     for (let i = 0; i <= newDrink['ingredients'].length - 1; i++) {
-        if (i != newDrink['ingredients'].length - 1) {
+        if (i !== newDrink['ingredients'].length - 1) {
             newDrinkIngredients.push(newDrink['ingredients'][i] + ", ")
         } else {
         newDrinkIngredients.push(newDrink['ingredients'][i] + ".")
@@ -30,7 +31,7 @@ function DrinkCard(props) {
     
 
     return (
-        <Link to="/drink" drink={drinkData}>
+        <Link to={`/drink/${newDrink['name']}`} state={{ from: newDrink }}>
             <div className="drink-card">
                 <img src={Image} alt="" className="drink-card-image"></img>
                 <h1>{newDrink['name']}</h1>

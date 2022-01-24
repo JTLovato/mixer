@@ -40,7 +40,7 @@ const Data = {
     name: 'Gimlet',
     id: '5',
     image: 'dark_and_stormy.jpg',
-    ingredients: ['london dry gin','rose\s lime juice'],
+    ingredients: ['london dry gin','rose\'s lime juice'],
     directions: 'Shake ingredients in a cocktail shaker with cracked ice. Strain into a chilled cocktail glass, and garnish with a lime.',
     rating: '9',
     description: 'Rose\'s lime cordial is perfectly balanced by herbaceous dry gin in this tart, impossible-to-screw-up British cocktail.',

@@ -1,12 +1,17 @@
-.App {
-  text-align: center;
-}
 
 :root {
   --main-color:#da1b1b;
   --secondary-color: #050505;
   --tertiary-color: #f1f1f1;
   --quarternary-color: #acacac;
+  --heading-font-family: 'Encode Sans', sans-serif;
+  --content-font-family: 'Roboto', sans-serif;
+}
+
+
+.App {
+  text-align: center;
+  font-family: var(--heading-font-family);
 }
 
 html {
@@ -166,9 +171,9 @@ body {
 
 .drink-card {
   margin: 3px;
-  padding: 2px;
   background-color: #ececec;
   text-decoration: none;
+  border: solid 2px var(--quarternary-color);
 }
 
 .drink-card h1,
@@ -182,6 +187,8 @@ body {
 
 .drink-card h6 {
   text-align: left;
+  padding: 10px;
+  margin: 2px;
 }
 
 .drink-card-image {
@@ -212,4 +219,68 @@ a:visited {
 }
 .fa {
   color: var(--main-color);
+}
+
+/* Ingredients list */
+
+.ingredients-list {
+  font-family: var(--content-font-family);
+  font-size: 125%;
+  margin: 0px 2px;
+}
+
+.ingredients-list li {
+  text-align: left;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+li label {
+  cursor: pointer;
+}
+
+li label input {
+  cursor: pointer;
+}
+
+
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+
+/* Drink Screen */
+
+.description,
+.directions {
+  padding: 5px 20px;
+  font-family: var(--content-font-family);
+  font-size: 18px;
+  text-align: left;
+}
+
+.sub-cats {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.sub-cat-indiv {
+  width: 180px;
+  height: 100px;
+  background-color: var(--tertiary-color);
+  border: solid 1px var(--main-color);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sub-cat-indiv * {
+  margin: 10px;
 }
