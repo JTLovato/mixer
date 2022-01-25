@@ -284,3 +284,45 @@ li label input {
 .sub-cat-indiv * {
   margin: 10px;
 }
+
+/* What to make card */
+
+.what-to-make-card {
+  display: flex;
+  flex-wrap: nowrap;
+  background: rgb(218,27,27);
+  background: linear-gradient(0deg, rgba(218,27,27,1) 0%, rgba(255,255,255,1) 50%);
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.what-to-make-card-inner h1 {
+  color: var(--main-color);
+  text-decoration: underline;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 250%;
+}
+
+.what-to-make-card-inner h3, 
+.what-to-make-card-inner h4 {
+  margin: 5px;
+}
+
+.spilled-drink {
+  height: 200px;
+}
+
+.header-div {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-div .fa {
+  margin-left: 15px;
+}
+
