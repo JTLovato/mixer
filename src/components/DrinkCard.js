@@ -5,14 +5,13 @@ import Image from '../img/gimlet.jpg'
 
 function DrinkCard(props) {
     let newDrinkIngredients = []
-
     let drinkData = props.data.drinks
     // console.log(drinkData)
 
     let drinkLength = drinkData.length
-
     let randomDrink = Math.floor(Math.random() * drinkLength);
 
+    // Function below lists the ingredients with a comma between each and a period at the end.
     let newDrink = drinkData[randomDrink]
     for (let i = 0; i <= newDrink['ingredients'].length - 1; i++) {
         if (i !== newDrink['ingredients'].length - 1) {
@@ -21,6 +20,7 @@ function DrinkCard(props) {
         newDrinkIngredients.push(newDrink['ingredients'][i] + ".")
     }
 }
+    // Truncates drink card so there's no overflow, shortening each description if needed with elipses.
     let truncated = () => {
         if (newDrink['description'].length > 100) {
             return newDrink['description'].substring(0, 100) + '...';

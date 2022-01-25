@@ -291,7 +291,7 @@ li label input {
   display: flex;
   flex-wrap: nowrap;
   background: rgb(218,27,27);
-  background: linear-gradient(0deg, rgba(218,27,27,1) 0%, rgba(255,255,255,1) 50%);
+  background: linear-gradient(7deg, rgba(218,27,27,1) 0%, rgba(255,255,255,1) 33%);
   padding: 10px;
   justify-content: space-around;
   align-items: center;
@@ -326,3 +326,10 @@ li label input {
   margin-left: 15px;
 }
 
+
+/* What to make screen */
+
+.ingredient-listed li {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -11,7 +11,7 @@ function WhatToMake() {
                     <h1>We Gotchu</h1>
                     <div className="header-div">
                         <h4>See How We Can Help</h4>
-                        <i class="fa fa-arrow-right"></i>
+                        <i className="fa fa-arrow-right"></i>
                     </div>
                 </div>
                 <div>
