@@ -8,23 +8,27 @@ function IngredientsCheckBoxes(props) {
 
     let newestArray = []
 
-    const handleOnChange = (e) => {
+    let handleOnChange = (e) => {
         let isChecked = e.target.checked;
         // console.log(isChecked)
         // console.log(e.target.value)
         if (isChecked) {
             for ( let i = 0; i <= newestArray.length; i++ ){
-                if (e.target.value != i) {
+                if (e.target.value !== i) {
                     newestArray.push(e.target.value)
+                    console.log(newestArray)
                     return newestArray
                 }
             } 
-        } else if (isChecked == false) {
+        } else if (isChecked === false) {
             newestArray = newestArray.filter(
-                ingred => ingred != e.target.value
+                ingred => ingred !== e.target.value
             )
         }
+        console.log(newestArray)
+        return newestArray
     }
+
     
     return ( 
         <div>
@@ -48,6 +52,7 @@ function IngredientsCheckBoxes(props) {
                     );
                 })}
             </ul>
+            <h1>So far, you've got:</h1>
         </div>
     )
 }
