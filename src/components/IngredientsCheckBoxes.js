@@ -17,6 +17,7 @@ function IngredientsCheckBoxes(props) {
                 if (e.target.value !== i) {
                     newestArray.push(e.target.value)
                     console.log(newestArray)
+                    // DON'T DELETE BELOW, INFINITE LOOP
                     return newestArray
                 }
             } 
@@ -25,11 +26,8 @@ function IngredientsCheckBoxes(props) {
                 ingred => ingred !== e.target.value
             )
         }
-        console.log(newestArray)
-        return newestArray
     }
 
-    
     return ( 
         <div>
             <ul className="toppings-list">
@@ -52,7 +50,7 @@ function IngredientsCheckBoxes(props) {
                     );
                 })}
             </ul>
-            <h1>So far, you've got:</h1>
+            <h1>{newestArray.length}</h1>
         </div>
     )
 }
