@@ -1,50 +1,58 @@
 
-import React, { useState } from 'react'; 
+import React from 'react'; 
 
 function IngredientsCheckBoxes(props) {
-    const [selectedIngredients, setSelectedIngredients] = useState([]);
+
+    let newData = props.ingredients
+    // console.log(newData)
+
+    let newestArray = []
+
     let handleOnChange = (e) => {
         let isChecked = e.target.checked;
+        // console.log(isChecked)
+        // console.log(e.target.value)
         if (isChecked) {
-            for (let i = 0; i <= selectedIngredients.length; i++) {
+            for ( let i = 0; i <= newestArray.length; i++ ){
                 if (e.target.value !== i) {
-                    setSelectedIngredients([...selectedIngredients, e.target.value + ", "]);
+                    newestArray.push(e.target.value)
+                    console.log(newestArray)
+                    // DON'T DELETE BELOW, INFINITE LOOP
+                    return newestArray
                 }
-            }
+            } 
         } else if (isChecked === false) {
-            setSelectedIngredients((selectedIngredients) =>
-                selectedIngredients.filter((ing) => ing !== e.target.value)
-            );
-        } 
-        console.log(selectedIngredients)
-    };
+            newestArray = newestArray.filter(
+                ingred => ingred !== e.target.value
+            )
+        }
+    }
 
-    return (
+    return ( 
         <div>
             <ul className="toppings-list">
-                {props.ingredients.map((name, index) => {
+                {newData.map(( name , index) => {
                     return (
                         <li key={index}>
                             <div className="toppings-list-item">
                                 <div className="left-section">
-                                    <input
-                                        type="checkbox"
-                                        id={name}
-                                        name={name}
-                                        value={name}
-                                        onChange={(e) => handleOnChange(e)}
-                                    />
-                                    <label htmlFor={name}>{name}</label>
+                                <input
+                                    type="checkbox"
+                                    id={`custom-checkbox-${index}`}
+                                    name={name}
+                                    value={name}
+                                    onChange={e => handleOnChange(e)}
+                                />
+                                <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
                                 </div>
                             </div>
                         </li>
                     );
                 })}
             </ul>
-        So Far You Have {selectedIngredients.length} Ingredients: {selectedIngredients}
         </div>
-    );
+    )
 }
-
-
-export default IngredientsCheckBoxes;
+    
+    
+    export default IngredientsCheckBoxes;
