@@ -1,47 +1,53 @@
 
-import React, {useState} from 'react'; 
+import React from 'react'; 
 
 function IngredientsCheckBoxes(props) {
 
-    let newData = props.data
+    let newData = props.ingredients
+    // console.log(newData)
 
-    
+    let newestArray = []
 
-
-        {/* let newDrinks = Data.ingredients[0].alcohol
-    // Turning into an array
-    let drinkIngredients = Object.values(newDrinks)
-
-
-    // Function to put all haved ingredients into list
-    let ingredientsHaved = []
-    // console.log(ingredientsHaved)
-    let onCheckChange = () => { 
-        const [checked, setChecked] = useState(false); 
-        const handleChange = () => { 
-
-        setChecked(!checked); 
-    }; 
-
-    // Putting Every Ingredient Into CheckList
-    let list = drinkIngredients.map((val, index) => (
-        <li key={index + 1}>
-            <label htmlFor={index + 1}>
-                <input
-                className="ingredient-checkbox"
-                id={index + 1} 
-                type="checkbox"/>
-                {checked ? 'Checked' : 'Not checked'}
-                {val}
-            </label>
-        </li>
-    )) */}
-
-        
+    const handleOnChange = (e) => {
+        let isChecked = e.target.checked;
+        // console.log(isChecked)
+        // console.log(e.target.value)
+        if (isChecked) {
+            for ( let i = 0; i <= newestArray.length; i++ ){
+                if (e.target.value != i) {
+                    newestArray.push(e.target.value)
+                    return newestArray
+                }
+            } 
+        } else if (isChecked == false) {
+            newestArray = newestArray.filter(
+                ingred => ingred != e.target.value
+            )
+        }
+    }
     
     return ( 
         <div>
-
+            <ul className="toppings-list">
+                {newData.map(( name , index) => {
+                    return (
+                        <li key={index}>
+                            <div className="toppings-list-item">
+                                <div className="left-section">
+                                <input
+                                    type="checkbox"
+                                    id={`custom-checkbox-${index}`}
+                                    name={name}
+                                    value={name}
+                                    onChange={e => handleOnChange(e)}
+                                />
+                                <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
+                                </div>
+                            </div>
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
     )
 }
