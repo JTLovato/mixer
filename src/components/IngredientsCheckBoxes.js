@@ -1,55 +1,67 @@
 
 import React from 'react'; 
+import HavedRecipeCards from './HavedRecipeCards';
 
 function IngredientsCheckBoxes(props) {
 
     let newData = props.ingredients
     // console.log(newData)
 
-    let newestArray = []
+    let selectedIngredients = []
 
     let handleOnChange = (e) => {
         let isChecked = e.target.checked;
         // console.log(isChecked)
         // console.log(e.target.value)
         if (isChecked) {
-            for ( let i = 0; i <= newestArray.length; i++ ){
+            for ( let i = 0; i <= selectedIngredients.length; i++ ){
                 if (e.target.value !== i) {
-                    newestArray.push(e.target.value)
-                    console.log(newestArray)
+                    selectedIngredients.push(e.target.value)
+                    console.log(selectedIngredients)
                     // DON'T DELETE BELOW, INFINITE LOOP
-                    return newestArray
+                    return selectedIngredients
                 }
             } 
         } else if (isChecked === false) {
-            newestArray = newestArray.filter(
+            selectedIngredients = selectedIngredients.filter(
                 ingred => ingred !== e.target.value
             )
         }
     }
 
+    const submitFunction = (event) => {
+        event.preventDefault();
+        // console.log(selectedIngredients)
+    }
+
     return ( 
         <div>
-            <ul className="toppings-list">
-                {newData.map(( name , index) => {
-                    return (
-                        <li key={index}>
-                            <div className="toppings-list-item">
-                                <div className="left-section">
-                                <input
-                                    type="checkbox"
-                                    id={`custom-checkbox-${index}`}
-                                    name={name}
-                                    value={name}
-                                    onChange={e => handleOnChange(e)}
-                                />
-                                <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
+            <form onSubmit={submitFunction}>
+                <ul className="toppings-list">
+                    {newData.map(( name , index) => {
+                        return (
+                            <li key={index}>
+                                <div className="toppings-list-item">
+                                    <div className="left-section">
+                                    <input
+                                        type="checkbox"
+                                        id={name}
+                                        name={name}
+                                        value={name}
+                                        onChange={e => handleOnChange(e)}
+                                    />
+                                    <label htmlFor={name}>{name}</label>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    );
-                })}
-            </ul>
+                            </li>
+                        );
+                    })}
+                </ul>
+                <input type="submit" value="Submit" />
+            </form>
+            <div>
+                <HavedRecipeCards selectedIngredients={selectedIngredients}/>
+            </div>
         </div>
     )
 }
