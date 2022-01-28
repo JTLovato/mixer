@@ -22,7 +22,7 @@ const Data = {
       name: 'Boulevardier',
       id: '3',
       image: 'dark_and_stormy.jpg',
-      ingredients: ['bourbon','campary', 'sweet vermouth'],
+      ingredients: ['bourbon','campari', 'sweet vermouth'],
       directions: 'Stir ingredients with ice in a mixing glass until chilled. Strain into a coupe glass. Garnish with an orange twist.',
       rating: '9',
       description: 'The Negroni\'s wintery counterpart is the Boulevardier, a whiskey cocktail invented for expat Americans bumming around Paris in the early 20th century.',
@@ -156,6 +156,11 @@ const Data = {
         'baileys',
         'amaretto',
         'vermouth',
+        'sweet vermouth',
+        'lime juice',
+        'angostura bitters',
+        'sugar cube',
+        'club soda',
       ]
     }
   ]

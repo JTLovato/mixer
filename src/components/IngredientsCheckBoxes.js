@@ -32,6 +32,7 @@ function IngredientsCheckBoxes(props) {
     const submitFunction = (event) => {
         event.preventDefault();
         // console.log(selectedIngredients)
+        // console.log("butts")
     }
 
     return ( 
@@ -57,10 +58,9 @@ function IngredientsCheckBoxes(props) {
                         );
                     })}
                 </ul>
-                <input type="submit" value="Submit" />
+                <HavedRecipeCards selectedIngredients={selectedIngredients}/>
             </form>
             <div>
-                <HavedRecipeCards selectedIngredients={selectedIngredients}/>
             </div>
         </div>
     )
