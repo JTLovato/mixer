@@ -262,6 +262,11 @@ li label input {
   text-align: left;
 }
 
+.drinkCardImage {
+  width: calc(100% - 10px);
+  margin: 5px;
+}
+
 .sub-cats {
   display: flex;
   flex-wrap: nowrap;

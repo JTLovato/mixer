@@ -4,10 +4,10 @@ export default class Print extends Component {
     render() {
         return (
             <button 
-                onclick="window.print()"
+                onClick="window.print()"
                 className="sub-cat-indiv"
             >
-                <i class="fa fa-print"></i>
+                <i className="fa fa-print"></i>
                 <h1>Print</h1>
             </button>
         )

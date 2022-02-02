@@ -12,7 +12,7 @@ const Data = {
     {
       name: 'French 75',
       id: '2',
-      image: 'dark_and_stormy.jpg',
+      image: 'french_75.jpg',
       ingredients: ['london dry gin','superfine sugar', 'lemon juice', 'brut champagne'],
       directions: 'Shake gin, sugar, and lemon juice well with cracked ice in a chilled cocktail shaker. Strain into a Collins glass half-full of cracked ice. Top off with champagne.',
       rating: '10',
@@ -21,7 +21,7 @@ const Data = {
     {
       name: 'Boulevardier',
       id: '3',
-      image: 'dark_and_stormy.jpg',
+      image: 'boulevardier.jpg',
       ingredients: ['bourbon','campari', 'sweet vermouth'],
       directions: 'Stir ingredients with ice in a mixing glass until chilled. Strain into a coupe glass. Garnish with an orange twist.',
       rating: '9',
@@ -30,7 +30,7 @@ const Data = {
     {
       name: 'Bloody Mary',
       id: '4',
-      image: 'dark_and_stormy.jpg',
+      image: 'bloody_mary.jpg',
       ingredients: ['tomato juice','horseradish', 'worchestershire sauce', 'celery seeds', 'hot sauce', 'lemon juice', 'lime juice', 'salt', 'pepper', 'vodka'],
       directions: 'Blend tomato juice, horseradish, Worcestershire, and celery seeds until smooth. Add hot sauce, lemon juice, lime juice, salt, and pepper, then blend. Adjust the mix depending on how spicy, salty, or citrusy you like it. Add 1 tbsp. vodka to stabilize the mix and keep the juices fresh, then blend. Combine 6-8 oz. of the mix with 2 oz. of vodka into a glass with ice. Pour back and forth into another glass 3 or 4 times to mix, then garnish however you like.',
       rating: '8',
@@ -39,7 +39,7 @@ const Data = {
     {
       name: 'Gimlet',
       id: '5',
-      image: 'dark_and_stormy.jpg',
+      image: 'gimlet.jpg',
       ingredients: ['london dry gin','rose\'s lime juice'],
       directions: 'Shake ingredients in a cocktail shaker with cracked ice. Strain into a chilled cocktail glass, and garnish with a lime.',
       rating: '9',
@@ -48,7 +48,7 @@ const Data = {
     {
       name: 'Moscow Mule',
       id: '6',
-      image: 'dark_and_stormy.jpg',
+      image: 'moscow_mule.jpg',
       ingredients: ['vodka','ginger beer', 'lime juice'],
       directions: 'Squeeze lime juice into a Moscow Mule mug, then drop in spent shell. Add 2-3 ice cubes and vodka, then fill with ginger beer.',
       rating: '8',
@@ -57,7 +57,7 @@ const Data = {
     {
       name: 'Aperol Spritz',
       id: '7',
-      image: 'dark_and_stormy.jpg',
+      image: 'aperol_spritz.jpg',
       ingredients: ['aperol','prosecco', 'club soda', 'orange slices'],
       directions: 'Build Aperol, prosecco, and club soda in a wine glass over ice. Garnish with fresh orange slices in the glass.',
       rating: '7',
@@ -66,7 +66,7 @@ const Data = {
     {
       name: 'Mojito',
       id: '8',
-      image: 'dark_and_stormy.jpg',
+      image: 'mojito.jpg',
       ingredients: ['white rum','lime juice', 'superfine sugar', 'mint leaves', ['club soda' || 'seltzer']],
       directions: 'In a smallish Collins glass, muddle lime juice with 1/2 to 1 tsp. superfine sugar. Add the mint leaves, mushing them against the side of the glass, then fill the glass 2/3 with cracked ice and pour in the rum. Pitch in the squeezed-out lime shell and top off with club soda or seltzer.',
       rating: '9',
@@ -75,7 +75,7 @@ const Data = {
     {
       name: 'Manhattan',
       id: '9',
-      image: 'dark_and_stormy.jpg',
+      image: 'manhattan.jpg',
       ingredients: ['rye whiskey', 'italian vermouth', 'angostura bitters'],
       directions: 'Stir ingredients well with cracked ice, then strain into a chilled cocktail glass. Garnish with a twist or maraschino cherry.',
       rating: '9',
@@ -84,7 +84,7 @@ const Data = {
     {
       name: 'Margarita',
       id: '10',
-      image: 'dark_and_stormy.jpg',
+      image: 'margarita.jpg',
       ingredients: ['silver tequila','cointreau', 'lime juice', 'course salt'],
       directions: 'Rub the rim of a chilled cocktail glass with lime juice and dip in coarse salt. Shake tequila, Cointreau, lime juice, and ice in a mixing glass, then strain into the salted glass over ice.',
       rating: '9',
@@ -93,7 +93,7 @@ const Data = {
     {
       name: 'Whickey Sour',
       id: '11',
-      image: 'dark_and_stormy.jpg',
+      image: 'whiskey_sour.jpg',
       ingredients: [['bourbon' || 'rye'],'lemon juice', 'superfine sugar', 'egg white'],
       directions: 'Shake ingredients well with cracked ice, strain into a chilled cocktail glass, and garnish with a lemon wedge and/or maraschino cherry.',
       rating: '9',
@@ -102,7 +102,7 @@ const Data = {
     {
       name: 'Dry Martini',
       id: '12',
-      image: 'dark_and_stormy.jpg',
+      image: 'dry_martini.jpg',
       ingredients: ['dry vermouth','gin', ['olives' || 'lemon twist']],
       directions: 'Fill a metal shaker with cracked ice. Pour in the dry vermouth, stir briefly, and strain out (this may be discarded). Add gin, then stir briskly for about 10 seconds. Strain into a chilled cocktail glass, and garnish with olives or a lemon twist.',
       rating: '9',
@@ -111,7 +111,7 @@ const Data = {
     {
       name: 'Daiquiri',
       id: '13',
-      image: 'dark_and_stormy.jpg',
+      image: 'daiquiri.jpg',
       ingredients: ['white rum','lime juice', 'superfine sugar'],
       directions: 'Squeeze lime into a shaker, stir in sugar, then add rum. Shake well with cracked ice and strain into a chilled cocktail glass.',
       rating: '6',
@@ -120,7 +120,7 @@ const Data = {
     {
       name: 'Negroni',
       id: '14',
-      image: 'dark_and_stormy.jpg',
+      image: 'negroni.jpg',
       ingredients: ['london dry gin','campari', 'vermouth'],
       directions: 'Add the ingredients together in a cocktail shaker. Stir well with cracked ice. Strain into a glass over cubed ice, then garnish with a twist of orange peel.',
       rating: '9',
@@ -129,7 +129,7 @@ const Data = {
     {
       name: 'Old Fashioned',
       id: '15',
-      image: 'dark_and_stormy.jpg',
+      image: 'old_fashioned.jpg',
       ingredients: [['bourbon' || 'rye whiskey'],'angostura bitters', 'sugar cube', 'club soda'],
       directions: 'Place sugar in an Old Fashioned glass. Wet it down with Angostura bitters and a splash of club soda, then muddle. Add a large ice cube and whiskey. Stir, then garnish with an orange twist.',
       rating: '9',

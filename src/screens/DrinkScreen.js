@@ -13,12 +13,13 @@ function DrinkScreen() {
     const location = useLocation()
     const { from } = location.state
 
-    // console.log(from['name']
+    console.log(from['name']);
 
     return (
         <div>
             {from &&
                 <div>
+                    <img className="drinkCardImage" src={`../img/${from['image']}`} alt="" />
                     <h1>
                         {from['name']}
                     </h1>

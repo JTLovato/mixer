@@ -1,7 +1,6 @@
 import React from 'react'
 import Ratings from './Ratings';
 import { Link } from 'react-router-dom';
-import Image from '../img/gimlet.jpg'
 
 function DrinkCard(props) {
     let newDrinkIngredients = []
@@ -33,7 +32,7 @@ function DrinkCard(props) {
     return (
         <Link to={`/drink/${newDrink['name']}`} state={{ from: newDrink }}>
             <div className="drink-card">
-                <img src={Image} alt="" className="drink-card-image"></img>
+                <img src={`../img/${newDrink['image']}`} alt="" className="drink-card-image"></img>
                 <h1>{newDrink['name']}</h1>
                 <Ratings stars={newDrink['rating']} />
                 <h5>{newDrinkIngredients}</h5>

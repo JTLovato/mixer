@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import IngredientsCheckBoxes from '../components/IngredientsCheckBoxes';
 import Data from '../Data'
 
 
 function WhatToMakeScreen() {
+
+
 
     let ingredients = Data.ingredients[0].alcohol
 

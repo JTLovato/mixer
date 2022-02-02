@@ -7,7 +7,7 @@ export default class IngredientsList extends Component {
     render() {
         const list = this.ingredients.map((val, index) => (
             <li key={index + 1}>
-                <label for={index + 1}>
+                <label htmlFor={index + 1}>
                     <input
                     className="checkbox"
                     id={index + 1} 
