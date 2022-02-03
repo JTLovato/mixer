@@ -8,17 +8,16 @@ function HavedRecipeCards(props) {
     let havedIngredients = props.selectedIngredients
     let newDrinkList = []
     let finalList =[]
-    
+
+    console.log(totalDrinks)
+
     function putInNewList() {
-        for (let p = 0; p < totalDrinks.length; p++ ){
-            
-            newDrinkList.push([totalDrinks[p].ingredients], [totalDrinks[p].id])
-        }
+        for (let p = 0; p < totalDrinks.length; p++ ) {
+            newDrinkList.push(totalDrinks[p].ingredients)
+        } 
     }
 
     putInNewList()
-    console.log(newDrinkList)
-
 
     let checkRecipes = () => {
         const possibleDrinks = newDrinkList.filter(ingres => 
@@ -27,12 +26,20 @@ function HavedRecipeCards(props) {
         for ( let i= 0; i < possibleDrinks.length; i++) {
             finalList.push(possibleDrinks[i])
         }
-        console.log(finalList)
-        // const possibleDrinks = newDrinkList.filter(ingres => 
-        //     ingres.every(ingre => havedIngredients.includes(ingre))
-        // );
+        console.log(finalList[0])
+        // console.log(totalDrinks[0].ingredients)
+
+        for (let q = 0; q < totalDrinks.length; q++) {
+            if (finalList[0] == totalDrinks[q].ingredients) {
+                console.log("YAY")
+                console.log(totalDrinks[q].name)
+            }
+        }
+
+
     }
-    
+
+
 
     return (
         <div>

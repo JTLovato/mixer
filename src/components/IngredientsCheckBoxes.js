@@ -32,7 +32,6 @@ function IngredientsCheckBoxes(props) {
     const submitFunction = (event) => {
         event.preventDefault();
         // console.log(selectedIngredients)
-        // console.log("butts")
     }
 
     return ( 
