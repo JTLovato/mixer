@@ -7,9 +7,9 @@ function HavedRecipeCards(props) {
 
     let havedIngredients = props.selectedIngredients
     let newDrinkList = []
-    let finalList =[]
+    let resultsList = []
 
-    console.log(totalDrinks)
+    // console.log(totalDrinks)
 
     function putInNewList() {
         for (let p = 0; p < totalDrinks.length; p++ ) {
@@ -19,31 +19,32 @@ function HavedRecipeCards(props) {
 
     putInNewList()
 
+    console.log(newDrinkList)
+
     let checkRecipes = () => {
         const possibleDrinks = newDrinkList.filter(ingres => 
             ingres.every(ingre => havedIngredients.includes(ingre))
         );
-        for ( let i= 0; i < possibleDrinks.length; i++) {
-            finalList.push(possibleDrinks[i])
-        }
-        console.log(finalList[0])
+        console.log(possibleDrinks)
         // console.log(totalDrinks[0].ingredients)
 
         for (let q = 0; q < totalDrinks.length; q++) {
-            if (finalList[0] == totalDrinks[q].ingredients) {
-                console.log("YAY")
-                console.log(totalDrinks[q].name)
+            let duh = totalDrinks[q].ingredients
+            if (possibleDrinks.includes(duh)) {
+                console.log('YES YOU WHORE')
+                resultsList.push(totalDrinks[q].name)
+                console.log(resultsList)
             }
         }
-
-
     }
-
 
 
     return (
         <div>
             <input type="submit" value="Submit" onClick={checkRecipes}/>
+            <div>
+            Results: {resultsList}
+            </div>
         </div>
     )
 }

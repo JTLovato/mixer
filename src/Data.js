@@ -103,7 +103,7 @@ const Data = {
       name: 'Dry Martini',
       id: '12',
       image: 'dry_martini.jpg',
-      ingredients: ['dry vermouth','gin', ['olives' || 'lemon twist']],
+      ingredients: ['dry vermouth','gin', 'olives'],
       directions: 'Fill a metal shaker with cracked ice. Pour in the dry vermouth, stir briefly, and strain out (this may be discarded). Add gin, then stir briskly for about 10 seconds. Strain into a chilled cocktail glass, and garnish with olives or a lemon twist.',
       rating: '9',
       description: 'A classic martini technically should be made with gin and served bone-chillingly cold. Order it stirred, not shaken. Sorry, 007.',
@@ -142,7 +142,6 @@ const Data = {
         'bourbon',
         'rye whiskey',
         'london dry gin',
-        'white rum',
         'gin',
         'vodka',
         'brandy',
@@ -161,6 +160,20 @@ const Data = {
         'angostura bitters',
         'sugar cube',
         'club soda',
+        'superfine sugar',
+        'white rum',
+        'dry vermouth',
+        'olives',
+        'lemon twist',
+        'egg white',
+        'silver tequila',
+        'cointreau',
+        'course salt',
+        'mint leaves',
+        'aperol',
+        'prosecco',
+        'orange slices',
+
       ]
     }
   ]
