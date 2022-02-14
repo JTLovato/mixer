@@ -139,6 +139,9 @@ const Data = {
   ingredients: [
     {
       alcohol: [
+        'rum',
+        'ginger beer',
+        'lime juice',
         'bourbon',
         'rye whiskey',
         'london dry gin',
@@ -147,16 +150,13 @@ const Data = {
         'brandy',
         'wine',
         'tequila',
-        'ginger beer',
         'beer',
-        'rum',
         'kahlua',
         'campari',
         'baileys',
         'amaretto',
         'vermouth',
         'sweet vermouth',
-        'lime juice',
         'angostura bitters',
         'sugar cube',
         'club soda',
@@ -173,6 +173,17 @@ const Data = {
         'aperol',
         'prosecco',
         'orange slices',
+        'superfine sugar', 
+        'lemon juice', 
+        'brut champagne',
+        'tomato juice',
+        'horseradish', 
+        'worchestershire sauce', 
+        'celery seeds', 
+        'hot sauce',
+        'salt', 
+        'pepper',
+        'rose\'s lime juice',
 
       ]
     }

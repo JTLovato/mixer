@@ -1,5 +1,5 @@
 
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import HavedRecipeCards from './HavedRecipeCards';
 
 function IngredientsCheckBoxes(props) {
@@ -7,36 +7,37 @@ function IngredientsCheckBoxes(props) {
     let newData = props.ingredients
     // console.log(newData)
 
-    let selectedIngredients = []
+    const [items, setItems] = useState([]);
+    const [itemName, setItemName] = useState("");
 
-    let handleOnChange = (e) => {
-        let isChecked = e.target.checked;
-        // console.log(isChecked)
-        // console.log(e.target.value)
-        if (isChecked) {
-            for ( let i = 0; i <= selectedIngredients.length; i++ ){
-                if (e.target.value !== i) {
-                    selectedIngredients.push(e.target.value)
-                    console.log(selectedIngredients)
-                    // DON'T DELETE BELOW, INFINITE LOOP
-                    return selectedIngredients
-                }
-            } 
-        } else if (isChecked === false) {
-            selectedIngredients = selectedIngredients.filter(
-                ingred => ingred !== e.target.value
-            )
-        }
-    }
+    // const addItem = event => {
+    //     event.preventDefault();
+    //     setItems([
+    //         ...items,
+    //         {
+    //             id: items.length,
+    //             name: itemName
+    //         }
+    //     ]);
+    //     setItemName("");
+    //     console.log(itemName)
+    //     console.log(items)
+    // };
 
-    const submitFunction = (event) => {
-        event.preventDefault();
-        // console.log(selectedIngredients)
-    }
+    // const addItem = (itemValue) => {
+    //     setItems(oldArray => [...oldArray, itemValue])
+    // }
+
+    const [ownedIngreds, updateOwnedIngreds] = useState([]);
+
+    const onClicks = (item) => {
+        updateOwnedIngreds( arr => [...arr, item]);
+        console.log(ownedIngreds)
+    };
 
     return ( 
         <div>
-            <form onSubmit={submitFunction}>
+            <form   >
                 <ul className="toppings-list">
                     {newData.map(( name , index) => {
                         return (
@@ -45,10 +46,12 @@ function IngredientsCheckBoxes(props) {
                                     <div className="left-section">
                                     <input
                                         type="checkbox"
+                                        key={name}
                                         id={name}
                                         name={name}
                                         value={name}
-                                        onChange={e => handleOnChange(e)}
+                                        onChange={e => onClicks(e.target.value)}
+                                        // onChange={ onClicks }
                                     />
                                     <label htmlFor={name}>{name}</label>
                                     </div>
@@ -57,8 +60,39 @@ function IngredientsCheckBoxes(props) {
                         );
                     })}
                 </ul>
-                <HavedRecipeCards selectedIngredients={selectedIngredients}/>
+                <div>
+                    <h2>What You Have So Far</h2>
+                    {ownedIngreds.map( e =>
+                    <div>{ e }</div>
+                    )}
+                </div>
+                <input type="submit" value="Submit" />
+
+                {/* <HavedRecipeCards selectedIngredients={selectedIngredients}/> */}
             </form>
+            
+
+
+
+            {/* <form onSubmit={addItem}>
+                <label>
+                    <input
+                        name="item"
+                        type="text"
+                        value={itemName}
+                        onChange={e => setItemName(e.target.value)}
+                    />
+                </label>
+            </form> */}
+            <ul>
+                {items.map(item => (
+                <li key={item.name}>{item.name}</li>
+                ))}
+            </ul>
+            
+
+
+
             <div>
             </div>
         </div>
