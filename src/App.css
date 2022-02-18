@@ -335,11 +335,50 @@ li label input {
 /* What to make screen */
 
 .toppings-list li {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-block;
+  min-width: 100px;
+  margin: 5px;
+  background-color: #ececec;
+  border-radius: 3px;
+  padding: 2px;
 }
 
 .left-section label {
   margin-left: 3px;
   text-transform: capitalize;
+}
+
+.owned-ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.owned-title {
+  width: 100%;
+  text-decoration: underline;
+}
+
+.each-ingredient {
+  margin: 2px 5px;
+  border: solid 1px var(--quarternary-color);
+  border-radius: 3px;
+  text-transform: capitalize; 
+}
+
+.ul-no-margin {
+  padding: 0;
+  list-style-type: none;
+}
+
+.ingredient-checkbox {
+  font-size: 150%;
+  margin: 5px 8px;
+}
+
+.ingredients-submit {
+  width: 80%;
+  margin: 10px 10%;
+  font-size: 200%;
+  padding: 10px;
 }

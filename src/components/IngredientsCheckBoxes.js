@@ -1,44 +1,47 @@
 
 import React, { useState } from 'react'; 
 import HavedRecipeCards from './HavedRecipeCards';
+import MatchedDrinkCard from './MatchedDrinkCard'
 
 function IngredientsCheckBoxes(props) {
 
     let newData = props.ingredients
+    let allDrinks = props.drinks
     // console.log(newData)
+    // console.log(allDrinks)
 
     const [items, setItems] = useState([]);
     const [itemName, setItemName] = useState("");
+    const [matchedDrinks, setMatchedDrinks] = useState([]);
 
-    // const addItem = event => {
-    //     event.preventDefault();
-    //     setItems([
-    //         ...items,
-    //         {
-    //             id: items.length,
-    //             name: itemName
-    //         }
-    //     ]);
-    //     setItemName("");
-    //     console.log(itemName)
-    //     console.log(items)
-    // };
-
-    // const addItem = (itemValue) => {
-    //     setItems(oldArray => [...oldArray, itemValue])
-    // }
-
-    const [ownedIngreds, updateOwnedIngreds] = useState([]);
+    const [ownedIngreds, setOwnedIngreds] = useState([]);
 
     const onClicks = (item) => {
-        updateOwnedIngreds( arr => [...arr, item]);
+        setOwnedIngreds( arr => [...arr, item]);
         console.log(ownedIngreds)
     };
 
+    const submitFunction = (e) => {
+        e.preventDefault();
+        console.log(ownedIngreds); 
+        for (let i = 0; i < allDrinks.length; i++) {
+            // console.log(allDrinks[i].ingredients)
+                let containsAll = allDrinks[i].ingredients.every(element => {
+                return ownedIngreds.indexOf(element) !== -1;
+            });
+            // console.log(containsAll)
+            if (containsAll == true) {
+                console.log(allDrinks[i].id)
+                setMatchedDrinks( arr => [...arr, allDrinks[i] ])
+            }
+        }
+        console.log(matchedDrinks);
+    }
+
     return ( 
         <div>
-            <form   >
-                <ul className="toppings-list">
+            <form onSubmit={submitFunction}>
+                <ul className="toppings-list ul-no-margin">
                     {newData.map(( name , index) => {
                         return (
                             <li key={index}>
@@ -51,50 +54,36 @@ function IngredientsCheckBoxes(props) {
                                         name={name}
                                         value={name}
                                         onChange={e => onClicks(e.target.value)}
-                                        // onChange={ onClicks }
                                     />
-                                    <label htmlFor={name}>{name}</label>
+                                    <label className="ingredient-checkbox" htmlFor={name}>{name}</label>
                                     </div>
                                 </div>
                             </li>
                         );
                     })}
                 </ul>
-                <div>
-                    <h2>What You Have So Far</h2>
+                <input className="ingredients-submit" type="submit" value="Submit" />
+                <div className="owned-ingredients-list">
+                    <h2 class="owned-title">What You Have So Far</h2>
                     {ownedIngreds.map( e =>
-                    <div>{ e }</div>
+                    <div className="each-ingredient">{ e }</div>
                     )}
                 </div>
-                <input type="submit" value="Submit" />
-
-                {/* <HavedRecipeCards selectedIngredients={selectedIngredients}/> */}
             </form>
-            
-
-
-
-            {/* <form onSubmit={addItem}>
-                <label>
-                    <input
-                        name="item"
-                        type="text"
-                        value={itemName}
-                        onChange={e => setItemName(e.target.value)}
-                    />
-                </label>
-            </form> */}
             <ul>
                 {items.map(item => (
                 <li key={item.name}>{item.name}</li>
                 ))}
             </ul>
-            
-
-
-
-            <div>
-            </div>
+            <ul className="ul-no-margin">
+                {matchedDrinks.map(matchedDrink => (
+                <li key={matchedDrink.id}>
+                    <MatchedDrinkCard matchedDrink={matchedDrink}/>
+                    {/* <DrinkCard matchedDrink={matchedDrink} /> */}
+                </li>
+                ))
+                }
+            </ul>
         </div>
     )
 }
