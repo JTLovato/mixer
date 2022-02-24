@@ -25,6 +25,16 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+a:visited {
+  color: var(--secondary-color);
+}
+
 .App-header {
   background-color: var(--tertiary-color);
   min-height: 50px;
@@ -205,18 +215,11 @@ body {
   margin: 5px 0;
 }
 
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  color: var(--secondary-color);
-}
-
 .ratings-bar span {
   display: flex;
   align-items: center;
 }
+
 .fa {
   color: var(--main-color);
 }
@@ -381,4 +384,23 @@ li label input {
   margin: 10px 10%;
   font-size: 200%;
   padding: 10px;
+  cursor: pointer;
+}
+
+.not_found_title {
+  margin: 0;
+}
+
+/* Favorites */
+
+.button-favorites {
+  max-width: 150px;
+  max-height: 150px;
+  background-color: #ececec;
+  border-radius: 3px;
+  border: solid 1px var(--quarternary-color);
+  font-size: 16px;
+  padding: 5px;
+  font-weight: 400;
+  margin: 10px;
 }

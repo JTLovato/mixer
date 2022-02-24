@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import DrinkScreen from './screens/DrinkScreen';
 import WhatToMakeScreen from './screens/WhatToMakeScreen';
+import Favorites from './screens/Favorites';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<HomeScreen />} exact></Route>
             <Route path="/WhatToMake" element={<WhatToMakeScreen />} exact></Route>
             <Route path="/drink/:id" element={<DrinkScreen />} exact></Route>
+            <Route path="/favorites" element={<Favorites />} exact></Route>
           </Routes>
         </main>
         <footer>

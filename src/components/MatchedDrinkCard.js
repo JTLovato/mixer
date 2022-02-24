@@ -1,6 +1,7 @@
 import React from 'react'
 import Ratings from './Ratings';
 import { Link } from 'react-router-dom';
+import Image_Not_Found from '../img/drink_not_found.jpg'
 
 function MatchedDrinkCard(props) {
     let matchedDrink = props.matchedDrink
@@ -29,7 +30,14 @@ function MatchedDrinkCard(props) {
     return (
         <Link to={`/drink/${matchedDrink['name']}`} state={{ from: matchedDrink }}>
             <div className="drink-card">
-                <img src={`../img/${matchedDrink['image']}`} alt="" className="drink-card-image"></img>
+                <img 
+                    src = {`../img/${matchedDrink['image']}`} 
+                    onError={(e) => {
+                            e.target.onerror = null
+                            e.target.src = Image_Not_Found
+                        }}
+                    alt="" className="drink-card-image"
+                ></img>
                 <h1>{matchedDrink['name']}</h1>
                 <Ratings stars={matchedDrink['rating']} />
                 <h5>{newDrinkIngredients}</h5>

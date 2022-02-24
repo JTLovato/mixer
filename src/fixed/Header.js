@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {ReactComponent as MainLogo} from '../img/logo.svg'
 
 function Header() {
 
     return (
         <nav className="navbar">
-            <MainLogo />
+            <Link to="/">
+                <MainLogo />
+            </Link>
             <div className="navbar-container">
                 <input type="checkbox" name="" id="" />
                 <div className="hamburger-lines">

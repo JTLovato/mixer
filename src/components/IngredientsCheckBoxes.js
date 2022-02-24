@@ -11,8 +11,8 @@ function IngredientsCheckBoxes(props) {
     // console.log(allDrinks)
 
     const [items, setItems] = useState([]);
-    const [itemName, setItemName] = useState("");
     const [matchedDrinks, setMatchedDrinks] = useState([]);
+    const [notFound, setNotFound] = useState(true)
 
     const [ownedIngreds, setOwnedIngreds] = useState([]);
 
@@ -24,17 +24,18 @@ function IngredientsCheckBoxes(props) {
     const submitFunction = (e) => {
         e.preventDefault();
         console.log(ownedIngreds); 
-        for (let i = 0; i < allDrinks.length; i++) {
-            // console.log(allDrinks[i].ingredients)
-                let containsAll = allDrinks[i].ingredients.every(element => {
-                return ownedIngreds.indexOf(element) !== -1;
-            });
-            // console.log(containsAll)
-            if (containsAll == true) {
-                console.log(allDrinks[i].id)
-                setMatchedDrinks( arr => [...arr, allDrinks[i] ])
+            for (let i = 0; i < allDrinks.length; i++) {
+                // console.log(allDrinks[i].ingredients)
+                    let containsAll = allDrinks[i].ingredients.every(element => {
+                    return ownedIngreds.indexOf(element) !== -1;
+                });
+                // console.log(containsAll)
+                if (containsAll == true) {
+                    setNotFound(false)
+                    console.log(allDrinks[i].id)
+                    setMatchedDrinks( arr => [...arr, allDrinks[i] ])
+                }
             }
-        }
         console.log(matchedDrinks);
     }
 
@@ -45,7 +46,7 @@ function IngredientsCheckBoxes(props) {
                     {newData.map(( name , index) => {
                         return (
                             <li key={index}>
-                                <div className="toppings-list-item">
+                                <label htmlFor={name} className="toppings-list-item">
                                     <div className="left-section">
                                     <input
                                         type="checkbox"
@@ -57,16 +58,16 @@ function IngredientsCheckBoxes(props) {
                                     />
                                     <label className="ingredient-checkbox" htmlFor={name}>{name}</label>
                                     </div>
-                                </div>
+                                </label>
                             </li>
                         );
                     })}
                 </ul>
                 <input className="ingredients-submit" type="submit" value="Submit" />
                 <div className="owned-ingredients-list">
-                    <h2 class="owned-title">What You Have So Far</h2>
+                    <h2 className="owned-title">What You Have So Far</h2>
                     {ownedIngreds.map( e =>
-                    <div className="each-ingredient">{ e }</div>
+                    <div key={e} className="each-ingredient">{ e }</div>
                     )}
                 </div>
             </form>
@@ -79,11 +80,16 @@ function IngredientsCheckBoxes(props) {
                 {matchedDrinks.map(matchedDrink => (
                 <li key={matchedDrink.id}>
                     <MatchedDrinkCard matchedDrink={matchedDrink}/>
-                    {/* <DrinkCard matchedDrink={matchedDrink} /> */}
                 </li>
                 ))
                 }
             </ul>
+            {notFound && 
+                <div>
+                    <h1 className="not_found_title">Nothing Found</h1>
+                    <h3 className="not_found_title">Try Adding More Ingredients</h3>
+                </div>  
+            }
         </div>
     )
 }
