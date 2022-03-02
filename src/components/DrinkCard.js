@@ -33,7 +33,7 @@ function DrinkCard(props) {
     return (
         <Link to={`/drink/${newDrink['name']}`} state={{ from: newDrink }}>
             <div className="drink-card">
-                <img src={`../img/${newDrink['image']}`} 
+                <img src={`/${newDrink['image']}`} 
                     onError={(e) => {
                         e.target.onerror = null
                         e.target.src = '../img/drink_not_found.jpg'
