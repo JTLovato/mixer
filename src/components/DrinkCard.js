@@ -6,7 +6,6 @@ function DrinkCard(props) {
     let newDrinkIngredients = []
     let drinkData = props.data.drinks
     let matchedDrink = props.matchedDrink;
-    console.log(matchedDrink)
     // console.log(drinkData)
 
     let drinkLength = drinkData.length
