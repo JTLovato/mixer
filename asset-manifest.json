@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/mixer/static/css/main.1a8ae15f.css",
+    "main.js": "/mixer/static/js/main.fdfcdeac.js",
+    "static/js/787.14f7441b.chunk.js": "/mixer/static/js/787.14f7441b.chunk.js",
+    "static/media/drink_not_found.jpg": "/mixer/static/media/drink_not_found.81e75bb69006e18ab838.jpg",
+    "static/media/spilled_drink.png": "/mixer/static/media/spilled_drink.59850f4669c881170d8b.png",
+    "static/media/logo.svg": "/mixer/static/media/logo.2ec36d76babc17eaa52a44291964d291.svg",
+    "index.html": "/mixer/index.html",
+    "main.1a8ae15f.css.map": "/mixer/static/css/main.1a8ae15f.css.map",
+    "main.fdfcdeac.js.map": "/mixer/static/js/main.fdfcdeac.js.map",
+    "787.14f7441b.chunk.js.map": "/mixer/static/js/787.14f7441b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a8ae15f.css",
+    "static/js/main.fdfcdeac.js"
+  ]
+}
