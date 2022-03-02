@@ -346,11 +346,6 @@ li label input {
   padding: 2px;
 }
 
-.left-section label {
-  margin-left: 3px;
-  text-transform: capitalize;
-}
-
 .owned-ingredients-list {
   display: flex;
   flex-wrap: wrap;
@@ -370,13 +365,14 @@ li label input {
 }
 
 .ul-no-margin {
-  padding: 0;
+  padding: 3px;
   list-style-type: none;
+  font-weight: 500;
 }
 
 .ingredient-checkbox {
-  font-size: 150%;
-  margin: 5px 8px;
+  margin: 3px 5px;
+  text-transform: capitalize;
 }
 
 .ingredients-submit {
@@ -385,10 +381,62 @@ li label input {
   font-size: 200%;
   padding: 10px;
   cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
+  color: var(--tertiary-color);
+  background-color: var(--main-color);
+  border: solid 2px var(--secondary-color);
 }
 
 .not_found_title {
   margin: 0;
+}
+
+input.accord,
+.accordion-content,
+input + label + .content {
+  display: none;
+}
+
+label {
+  display: block;    
+  padding: 8px 22px;
+  margin: 3px 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  color: var(--secondary-color);
+  transition: ease .15s;
+  background-color: #ececec;
+}
+
+.content {
+  padding: 10px 5px;
+  margin: 0 0 1px 0;
+  border-radius: 3px;
+}
+
+input:checked + label + .content {
+  display: block;
+}
+
+.accord-title {
+  position: relative;
+}
+
+.accord-highlight {
+  display: none;
+  min-height: 36px;
+  min-width: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--main-color);
+}
+
+input:checked + label .accord-highlight {
+  display: inline-block;
 }
 
 /* Favorites */
@@ -404,3 +452,9 @@ li label input {
   font-weight: 400;
   margin: 10px;
 }
+
+
+
+
+
+
