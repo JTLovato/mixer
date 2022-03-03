@@ -50,7 +50,7 @@ function IngredientsCheckBoxes() {
                     return ownedIngreds.indexOf(element) !== -1;
                 });
                 console.log(containsAll)
-                if (containsAll == true) {
+                if (containsAll === true) {
                     setNotFound(false)
                     console.log(allDrinks[i].id)
                     setMatchedDrinks( arr => [...arr, allDrinks[i] ])
