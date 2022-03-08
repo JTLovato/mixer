@@ -246,7 +246,7 @@ const newData = {
         {
             name: 'Corpse Reviver No. 2',
             id: '28',
-            image: '.jpg',
+            image: 'corpse_reviver_no_2.jpg',
             ingredients:['gin', 'lemon juice', 'cointreau', 'dry vermouth', 'absinthe', 'orange peel'],
             directions: 'Add the gin, lemon juice, Cointreau, dry vermouth, and absinthe to a cocktail shaker. Fill it with ice and shake it until cold. Strain into a cocktail glass. If desired, garnish with an orange peel or orange wedge. ',
             rating: '9',
