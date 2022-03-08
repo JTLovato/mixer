@@ -373,6 +373,9 @@ li label input {
 .ingredient-checkbox {
   margin: 3px 5px;
   text-transform: capitalize;
+  padding: 15px;
+  position: relative;
+  width: 140px;
 }
 
 .ingredients-submit {
@@ -417,17 +420,32 @@ label {
   border-radius: 3px;
 }
 
+.drink-map {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 input:checked + label + .content {
   display: block;
 }
 
+input:checked + label + .drink-map {
+  display: flex;
+}
+
 .accord-title {
   position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 150%;
 }
 
 .accord-highlight {
   display: none;
-  min-height: 36px;
+  min-height: 66px;
   min-width: 18px;
   position: absolute;
   top: 0;
@@ -436,6 +454,18 @@ input:checked + label + .content {
 }
 
 input:checked + label .accord-highlight {
+  display: inline-block;
+}
+
+.checkMark {
+  display: none;
+  width: 18px;
+  position: absolute;
+  right: 40px;
+  top: 15px;
+}
+
+input:checked + label .checkMark {
   display: inline-block;
 }
 
