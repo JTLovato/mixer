@@ -1,5 +1,5 @@
 import React from 'react'
-import Data from '../Data'
+import Data from '../NewData'
 import DrinkCard from './DrinkCard'
 
 function HotDrinks() {
