@@ -8,8 +8,8 @@ function HotDrinks() {
 // This creates first drink's data
     return (
         
-        <div>
-            <h1>Hottest Drinks Now</h1>
+        <div className="hot-drinks-container">
+            <h1 className="white-header">Hottest Drinks Now</h1>
             <DrinkCard data={Data} />
             <DrinkCard data={Data} />
             <DrinkCard data={Data} />

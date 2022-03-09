@@ -30,20 +30,20 @@ function DrinkScreen() {
                             e.target.src = Image_Not_Found
                         }} 
                     alt="" />
-                    <h1>
+                    <h1 className="white-header">
                         {from['name']}
                     </h1>
                     <div>
                         <Ratings stars={from['rating']} />
                     </div>
-                    <p className="description">
+                    <p className="description white-header">
                         {from['description']}
                     </p>
                     <FavoriteButtons id={from['id']}/>
                     <div className="ingredients-list">
                         <IngredientsList ingredients={from} />
                     </div>
-                    <p className="directions">
+                    <p className="directions white-header">
                         {from['directions']}
                     </p>
                     <div className="sub-cats">

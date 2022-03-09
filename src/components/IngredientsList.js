@@ -18,8 +18,8 @@ export default class IngredientsList extends Component {
         ))
         return (
             <div>
-                <h2>Ingredients List</h2>
-                <ol className="ingredients-list">
+                <h2 className="white-header">Ingredients List</h2>
+                <ol className="ingredients-list white-header">
                     {list}
                 </ol>
             </div>

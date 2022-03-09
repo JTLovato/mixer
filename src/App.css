@@ -23,6 +23,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  background-color: #222222;
 }
 
 a {
@@ -47,6 +48,7 @@ a:visited {
   color: black;
   position: fixed;
   top: 0;
+  right: 0;
   justify-content: space-between;
   display: flex;
   flex-wrap: nowrap;
@@ -55,8 +57,12 @@ a:visited {
 }
 
 .svg {
-  margin: 8px;
-  height: 30px
+  margin: 10px;
+  height: 25px
+}
+
+.white-header {
+  color: var(--tertiary-color);
 }
 
 .white {
@@ -120,7 +126,7 @@ a:visited {
   height: 23px;
   width: 35px;
   position: absolute;
-  top: 17px;
+  top: 13px;
   right: 20px;
   z-index: 2;
   display: flex;
@@ -180,7 +186,7 @@ a:visited {
 /* Hot Drinks Section */
 
 .drink-card {
-  margin: 3px;
+  margin: 10px;
   background-color: #ececec;
   text-decoration: none;
   border: solid 2px var(--quarternary-color);
@@ -230,6 +236,7 @@ a:visited {
   font-family: var(--content-font-family);
   font-size: 125%;
   margin: 0px 2px;
+  padding: 10px;
 }
 
 .ingredients-list li {
@@ -298,11 +305,17 @@ li label input {
 .what-to-make-card {
   display: flex;
   flex-wrap: nowrap;
-  background: rgb(218,27,27);
-  background: linear-gradient(7deg, rgba(218,27,27,1) 0%, rgba(255,255,255,1) 33%);
-  padding: 10px;
+  background-image: url('./img/header_bg.jpg');
   justify-content: space-around;
   align-items: center;
+  background-size: cover;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 15px 0px;
+}
+
+.what-to-make-card-inner {
+  margin-top: -30px;
 }
 
 .what-to-make-card-inner h1 {
@@ -355,13 +368,16 @@ li label input {
 .owned-title {
   width: 100%;
   text-decoration: underline;
+  color: var(--tertiary-color);
 }
 
 .each-ingredient {
   margin: 2px 5px;
+  padding: 8px;
   border: solid 1px var(--quarternary-color);
   border-radius: 3px;
   text-transform: capitalize; 
+  background-color: var(--tertiary-color);
 }
 
 .ul-no-margin {
@@ -376,6 +392,9 @@ li label input {
   padding: 15px;
   position: relative;
   width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ingredients-submit {
@@ -459,14 +478,20 @@ input:checked + label .accord-highlight {
 
 .checkMark {
   display: none;
-  width: 18px;
+  width: 30px;
   position: absolute;
-  right: 40px;
-  top: 15px;
+  right: 0px;
+  top: 0px;
 }
 
 input:checked + label .checkMark {
   display: inline-block;
+}
+
+.not-found,
+.matched-drinks-list {
+  padding-bottom: 80px;
+  color: var(--tertiary-color);
 }
 
 /* Favorites */

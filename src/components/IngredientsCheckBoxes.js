@@ -30,34 +30,37 @@ function IngredientsCheckBoxes() {
 
     const [items, setItems] = useState([]);
     const [matchedDrinks, setMatchedDrinks] = useState([]);
-    const [notFound, setNotFound] = useState(true)
+    const [notFound, setNotFound] = useState(false)
 
     const [ownedIngreds, setOwnedIngreds] = useState([]);
 
     // Adds each checked ingredient to your owned ingredients array
     const onClicks = (item) => {
-        setOwnedIngreds( arr => [...arr, item]);
-        console.log(ownedIngreds)
+        if (ownedIngreds.includes(item) == false) {
+            setOwnedIngreds( arr => [...arr, item]);
+            console.log(ownedIngreds)
+        } else {
+            // setOwnedIngreds( arr => arr.filter(item => !item))
+            console.log("Fix This Soon")
+        }
     };
 
     // On click, takes owned ingredients array, and checks it through each recipe's ingredients.
     const submitFunction = (e) => {
         e.preventDefault();
-        console.log(ownedIngreds); 
             for (let i = 0; i < allDrinks.length; i++) {
-                console.log(ownedIngreds)
-                console.log(allDrinks[i].ingredients)
                     let containsAll = allDrinks[i].ingredients.every(element => {
                     return ownedIngreds.indexOf(element) !== -1;
                 });
-                console.log(containsAll)
                 if (containsAll === true) {
-                    setNotFound(false)
-                    console.log(allDrinks[i].id)
+                    setNotFound(!notFound)
+                    console.log(notFound)
                     setMatchedDrinks( arr => [...arr, allDrinks[i] ])
+                } else {
+                    setNotFound(!notFound)
+                    console.log(notFound)
                 }
             }
-        console.log(matchedDrinks);
     }
 
     return ( 
@@ -82,7 +85,7 @@ function IngredientsCheckBoxes() {
                                 Whiskey
                             </label>
                             <div className="content drink-map">
-                            {whiskeys.map((name, index) => {
+                                {whiskeys.map((name, index) => {
                                     return (
                                         <>
                                             <input
@@ -107,25 +110,25 @@ function IngredientsCheckBoxes() {
                                 <span className="accord-highlight"></span>
                                 Tequila</label>
                                 <div className="content drink-map">
-                            {tequilas.map((name, index) => {
-                                    return (
-                                        <>
-                                            <input
-                                                type="checkbox"
-                                                key={name}
-                                                id={name}
-                                                name={name}
-                                                value={name}
-                                                onChange={e => onClicks(e.target.value)}
-                                                className="accordion-content"
-                                            />
-                                            <label htmlFor={name} className="toppings-list-item ingredient-checkbox" key={index}>
-                                                {name}
-                                                <img src={Check} alt="" className="checkMark"></img>
-                                            </label>
-                                        </>
-                                    )
-                                })}
+                                    {tequilas.map((name, index) => {
+                                        return (
+                                            <>
+                                                <input
+                                                    type="checkbox"
+                                                    key={name}
+                                                    id={name}
+                                                    name={name}
+                                                    value={name}
+                                                    onChange={e => onClicks(e.target.value)}
+                                                    className="accordion-content"
+                                                />
+                                                <label htmlFor={name} className="toppings-list-item ingredient-checkbox" key={index}>
+                                                    {name}
+                                                    <img src={Check} alt="" className="checkMark"></img>
+                                                </label>
+                                            </>
+                                        )
+                                    })}
                             </div>
                             <input className="accord" type="checkbox" id="gin" />
                             <label htmlFor="gin" className="accord-title">
@@ -134,22 +137,22 @@ function IngredientsCheckBoxes() {
                             </label>
                             <div className="content drink-map">
                             {gins.map((name, index) => {
-                                     return (
-                                        <>
-                                            <input
-                                                type="checkbox"
-                                                key={name}
-                                                id={name}
-                                                name={name}
-                                                value={name}
-                                                onChange={e => onClicks(e.target.value)}
-                                                className="accordion-content"
-                                            />
-                                            <label htmlFor={name} className="toppings-list-item ingredient-checkbox" key={index}>
-                                                {name}
-                                                <img src={Check} alt="" className="checkMark"></img>
-                                            </label>
-                                        </>
+                                return (
+                                    <>
+                                        <input
+                                            type="checkbox"
+                                            key={name}
+                                            id={name}
+                                            name={name}
+                                            value={name}
+                                            onChange={e => onClicks(e.target.value)}
+                                            className="accordion-content"
+                                        />
+                                        <label htmlFor={name} className="toppings-list-item ingredient-checkbox" key={index}>
+                                            {name}
+                                            <img src={Check} alt="" className="checkMark"></img>
+                                        </label>
+                                    </>
                                     )
                                 })}
                             </div>
@@ -159,8 +162,8 @@ function IngredientsCheckBoxes() {
                                 Rum
                             </label>
                             <div className="content drink-map">
-                            {general_rum.map((name, index) => {
-                            return (
+                                {general_rum.map((name, index) => {
+                                    return (
                                         <>
                                             <input
                                                 type="checkbox"
@@ -185,8 +188,8 @@ function IngredientsCheckBoxes() {
                                 Brandy
                             </label>
                             <div className="content drink-map">
-                            {brandys.map((name, index) => {
-                            return (
+                                {brandys.map((name, index) => {
+                                    return (
                                         <>
                                             <input
                                                 type="checkbox"
@@ -211,8 +214,8 @@ function IngredientsCheckBoxes() {
                                 Liqueur
                             </label>
                             <div className="content drink-map">
-                            {liqueurs.map((name, index) => {
-                            return (
+                                {liqueurs.map((name, index) => {
+                                    return (
                                         <>
                                             <input
                                                 type="checkbox"
@@ -271,7 +274,7 @@ function IngredientsCheckBoxes() {
                             </label>
                             <div className="content drink-map">
                                 {whites.map((name, index) => {
-                                     return (
+                                    return (
                                         <>
                                             <input
                                                 type="checkbox"
@@ -297,24 +300,24 @@ function IngredientsCheckBoxes() {
                             </label>
                             <div className="content drink-map">
                                 {sparklings.map((name, index) => {
-                                        return (
-                                            <>
-                                                <input
-                                                    type="checkbox"
-                                                    key={name}
-                                                    id={name}
-                                                    name={name}
-                                                    value={name}
-                                                    onChange={e => onClicks(e.target.value)}
-                                                    className="accordion-content"
-                                                />
-                                                <label htmlFor={name} className="toppings-list-item ingredient-checkbox" key={index}>
-                                                    {name}
-                                                    <img src={Check} alt="" className="checkMark"></img>
-                                                </label>
-                                            </>
-                                        )
-                                    })}
+                                    return (
+                                        <>
+                                            <input
+                                                type="checkbox"
+                                                key={name}
+                                                id={name}
+                                                name={name}
+                                                value={name}
+                                                onChange={e => onClicks(e.target.value)}
+                                                className="accordion-content"
+                                            />
+                                            <label htmlFor={name} className="toppings-list-item ingredient-checkbox" key={index}>
+                                                {name}
+                                                <img src={Check} alt="" className="checkMark"></img>
+                                            </label>
+                                        </>
+                                    )
+                                })}
                             </div>
                             <input className="accord" type="checkbox" id="pinks" />
                             <label htmlFor="pinks" className="accord-title">
@@ -323,7 +326,7 @@ function IngredientsCheckBoxes() {
                             </label>
                             <div className="content drink-map">
                                 {pinks.map((name, index) => {
-                                     return (
+                                    return (
                                         <>
                                             <input
                                                 type="checkbox"
@@ -349,7 +352,7 @@ function IngredientsCheckBoxes() {
                             </label>
                             <div className="content drink-map">
                                 {desserts.map((name, index) => {
-                                     return (
+                                    return (
                                         <>
                                             <input
                                                 type="checkbox"
@@ -376,7 +379,7 @@ function IngredientsCheckBoxes() {
                         </label>
                         <div className="content drink-map">
                             {other.map((name, index) => {
-                                 return (
+                                return (
                                     <>
                                         <input
                                             type="checkbox"
@@ -402,7 +405,7 @@ function IngredientsCheckBoxes() {
                         </label>
                         <div className="content drink-map">
                             {beer.map((name, index) => {
-                                 return (
+                                return (
                                     <>
                                         <input
                                             type="checkbox"
@@ -429,7 +432,7 @@ function IngredientsCheckBoxes() {
                     </label>
                     <div className="content drink-map">
                     {data.mixers.map((name, index) => {
-                             return (
+                            return (
                                 <>
                                     <input
                                         type="checkbox"
@@ -455,7 +458,7 @@ function IngredientsCheckBoxes() {
                     </label>
                     <div className="content drink-map">
                         {garnishes.map((name, index) => {
-                             return (
+                            return (
                                 <>
                                     <input
                                         type="checkbox"
@@ -488,7 +491,7 @@ function IngredientsCheckBoxes() {
                 <li key={item.name}>{item.name}</li>
                 ))}
             </ul>
-            <ul className="ul-no-margin">
+            <ul className="ul-no-margin matched-drinks-list">
                 {matchedDrinks.map(matchedDrink => (
                     <li key={matchedDrink.id}>
                         <MatchedDrinkCard matchedDrink={matchedDrink}/>
@@ -496,7 +499,7 @@ function IngredientsCheckBoxes() {
                 ))}
             </ul>
             {notFound && 
-                <div>
+                <div className="not-found">
                     <h1 className="not_found_title">Nothing Found</h1>
                     <h3 className="not_found_title">Try Adding More Ingredients</h3>
                 </div>  

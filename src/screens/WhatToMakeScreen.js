@@ -13,7 +13,7 @@ function WhatToMakeScreen() {
 
     return ( 
     <div> 
-        <h1>What Ingredients Do You Have?</h1>
+        <h1 className="white-header">What Ingredients Do You Have?</h1>
         <div className="button-hold">
             {/* TODO Fix checked radio buttons */}
             {/* <input type="radio" id="searchAny" name="search" checked value="Any Ingredients" />
