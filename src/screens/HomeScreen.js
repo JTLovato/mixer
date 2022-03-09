@@ -12,6 +12,7 @@ function HomeScreen() {
     console.log("%cGitHub: github.com/jtlovato", "padding: 10px 50px")
     console.log("%cLinkedIn: linkedin.com/in/johntlovato", "padding: 10px 50px")
     console.log("%cTwitter: @JohnTLovato", "padding: 10px 50px")
+    console.log("%cHave A Great Day!!", "padding: 10px 50px")
     
 
     return (
