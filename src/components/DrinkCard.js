@@ -40,7 +40,7 @@ function DrinkCard(props) {
                     }} 
                     alt="" className="drink-card-image"
                 ></img>
-                <h1 className="white-header">{newDrink['name']}</h1>
+                <h1 >{newDrink['name']}</h1>
                 <Ratings stars={newDrink['rating']} />
                 <h5>{newDrinkIngredients}</h5>
                 <h6>{truncated()}</h6>
