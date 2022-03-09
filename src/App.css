@@ -236,7 +236,7 @@ a:visited {
   font-family: var(--content-font-family);
   font-size: 125%;
   margin: 0px 2px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .ingredients-list li {
