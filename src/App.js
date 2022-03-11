@@ -6,6 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import DrinkScreen from './screens/DrinkScreen';
 import WhatToMakeScreen from './screens/WhatToMakeScreen';
 import Favorites from './screens/Favorites';
+import SearchScreen from './screens/SearchScreen';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/WhatToMake" element={<WhatToMakeScreen />} exact></Route>
             <Route path="/drink/:id" element={<DrinkScreen />} exact></Route>
             <Route path="/favorites" element={<Favorites />} exact></Route>
+            <Route path="/search" element={<SearchScreen />} exact></Route>
           </Routes>
         </main>
         <footer>

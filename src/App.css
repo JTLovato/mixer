@@ -508,8 +508,49 @@ input:checked + label .checkMark {
   margin: 10px;
 }
 
+/* Search Section */
 
+.home-search {
+  background-color:var(--tertiary-color);
+  min-width: 300px;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+  border-bottom: solid 5px var(--main-color);
+  font-size: 180%;
+  font-weight: 700;
+}
 
+.searched-drink {
+  background-color: var(--tertiary-color);
+  display: inline;
+  margin: 3px 2%;
+  padding: 15px 8px;
+  width: 35%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px #cf9696;
+}
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  width: 80%;
+  margin: 10px 10%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.search-container h3 {
+  width: 100%;
+  color: var(--tertiary-color);
+  text-decoration: underline;
+}
 
 

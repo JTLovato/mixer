@@ -4,6 +4,8 @@ import DrinkCard from './DrinkCard'
 
 function HotDrinks() {
 
+    let newDrinks = Data.drinks
+
 // console.log(Data.drinks[0])
 // This creates first drink's data
     return (

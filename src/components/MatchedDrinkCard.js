@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom';
 import Image_Not_Found from '../img/drink_not_found.jpg'
 
 function MatchedDrinkCard(props) {
-    let matchedDrink = props.matchedDrink
-    console.log(matchedDrink)
     let newDrinkIngredients = []
     let drinkData = props.matchedDrink
 
     // Function below lists the ingredients with a comma between each and a period at the end.
     let newDrink = drinkData['ingredients']
-    for (let i = 0; i <= matchedDrink['ingredients'].length - 1; i++) {
+    for (let i = 0; i <= drinkData['ingredients'].length - 1; i++) {
         if (i !== newDrink.length - 1) {
             newDrinkIngredients.push(newDrink[i] + ", ")
         } else {
@@ -20,26 +18,26 @@ function MatchedDrinkCard(props) {
 }
     // Truncates drink card so there's no overflow, shortening each description if needed with elipses.
     let truncated = () => {
-        if (matchedDrink['description'].length > 100) {
-            return matchedDrink['description'].substring(0, 100) + '...';
+        if (drinkData['description'].length > 100) {
+            return drinkData['description'].substring(0, 100) + '...';
         } else {
-            return matchedDrink['description']
+            return drinkData['description']
         }
     }
     
     return (
-        <Link to={`/drink/${matchedDrink['name']}`} state={{ from: matchedDrink }}>
+        <Link to={`/drink/${drinkData['name']}`} state={{ from: drinkData }}>
             <div className="drink-card">
                 <img 
-                    src = {`../img/${matchedDrink['image']}`} 
+                    src = {`../img/${drinkData['image']}`} 
                     onError={(e) => {
                             e.target.onerror = null
                             e.target.src = Image_Not_Found
                         }}
                     alt="" className="drink-card-image"
                 ></img>
-                <h1>{matchedDrink['name']}</h1>
-                <Ratings stars={matchedDrink['rating']} />
+                <h1>{drinkData['name']}</h1>
+                <Ratings stars={drinkData['rating']} />
                 <h5>{newDrinkIngredients}</h5>
                 <h6>{truncated()}</h6>
             </div>

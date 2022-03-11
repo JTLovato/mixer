@@ -418,7 +418,7 @@ const newData = {
             name: 'Floradora',
             id: '47',
             image: 'floradora.jpg',
-            ingredients:['g in', 'raspberry syrup', 'lime juice', 'ginger beer', 'lime wedge', ],
+            ingredients:['gin', 'raspberry syrup', 'lime juice', 'ginger beer', 'lime wedge', ],
             directions: 'In a highball glass or stemmed glass, add the gin, raspberry syrup or Chambord, and lime juice. Fill with ice and top with ginger beer. Garnish with a lime wedge and raspberry, if desired.',
             rating: '9',
             description: 'Heres a light, bubbly classic cocktail thats flown under the radar for too long: the Floradora! This beautifully pink drink was inspired by a Broadway show by the same name and dates back to the early 1900s. Its a total gem of a drink: raspberry syrup pairs beautifully with lime, gin, and the spicy kick of ginger beer! Its a classic highball cocktail, though its relatively undiscovered. With its sweet name and delicious sweet tart flavor, we think its time for another spot in the limelight!',
@@ -753,6 +753,7 @@ const newData = {
                             'campari',
                             'cynar',
                             'creme de violette',
+                            'elderflower liqueur',
                         ]
                     },
                     {

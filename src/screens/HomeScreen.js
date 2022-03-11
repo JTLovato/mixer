@@ -1,6 +1,7 @@
 import React from 'react'
 import HotDrinks from '../components/HotDrinks'
 import WhatToMake from '../components/WhatToMake'
+import SearchLink from '../components/SearchLink'
 
 function HomeScreen() {
     
@@ -18,6 +19,7 @@ function HomeScreen() {
     return (
         <div>
             <WhatToMake />
+            <SearchLink />
             <HotDrinks />
         </div>
     )
