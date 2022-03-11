@@ -6,7 +6,7 @@ function SearchScreen() {
 
     const [query, setQuery] = useState("")
     let drinks = Data.drinks
-
+    
     return (
         <div className="search-container">
             <input 
@@ -15,17 +15,16 @@ function SearchScreen() {
                 onChange={event => setQuery(event.target.value.toLowerCase())} 
             />
             <h3>Matched Drinks So Far</h3>
-                {drinks.filter(post => {
+            {drinks.filter(drink => {
                 if (query === '') {
-                    return post;
-                } else if (post.name.toLowerCase().includes(query)) {
-                    console.log(post)
-                    return post
+                    return drink;
+                } else if (drink.name.toLowerCase().includes(query)) {
+                    return drink
                 }
-            }).map((post, index) => (
+            }).map((drink, index) => (
                 <div key={index} className="searched-drink">
-                    <Link to={`/drink/${post.name}`} state={{ from: post }}>
-                        {post.name}
+                    <Link to={`/drink/${drink.name}`} state={{ from: drink }}>
+                        {drink.name}
                     </Link>
                 </div>
             ))

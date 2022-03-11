@@ -7,6 +7,7 @@ import DrinkScreen from './screens/DrinkScreen';
 import WhatToMakeScreen from './screens/WhatToMakeScreen';
 import Favorites from './screens/Favorites';
 import SearchScreen from './screens/SearchScreen';
+import Footer from './fixed/Footer';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           </Routes>
         </main>
         <footer>
-
+          <Footer />
         </footer>
       </div>
     </BrowserRouter>

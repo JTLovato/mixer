@@ -21,7 +21,7 @@ function Header() {
                     <li><a href="#home">Account</a></li>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Favorites</a></li>
-                    <li><a href="#food">Recipies</a></li>
+                    <li><a href="#food">Recipes</a></li>
                     <li><a href="#food">Glossery</a></li>
                 </ul>
             </div>

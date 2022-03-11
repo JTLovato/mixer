@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useLocation } from 'react-router-dom'
 import DrinkNotes from '../components/DrinkNotes'
 import FavoriteButtons from '../components/FavoritesButtons'

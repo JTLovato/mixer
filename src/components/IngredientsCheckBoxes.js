@@ -10,15 +10,15 @@ function IngredientsCheckBoxes() {
 
     let data = newData.ingredients[0]
     let garnishes = data.garnishes
-    let mixers = data.mixers
+    // let mixers = data.mixers
     let alcohol = data.alcohol
-        let wine = data.alcohol.wine
+        // let wine = data.alcohol.wine
             let reds = data.alcohol[0].wine[0].red
             let whites = data.alcohol[0].wine[0].white
             let sparklings = data.alcohol[0].wine[0].sparkling
             let pinks = data.alcohol[0].wine[0].pink_wine
             let desserts = data.alcohol[0].wine[0].dessert_and_fortified
-        let spirits = alcohol.spirits
+        // let spirits = alcohol.spirits
             let whiskeys = data.alcohol[0].spirits[0].whiskey
             let tequilas = data.alcohol[0].spirits[1].tequila
             let gins = data.alcohol[0].spirits[2].gin
@@ -36,7 +36,7 @@ function IngredientsCheckBoxes() {
 
     // Adds each checked ingredient to your owned ingredients array
     const onClicks = (item) => {
-        if (ownedIngreds.includes(item) == false) {
+        if (ownedIngreds.includes(item) === false) {
             setOwnedIngreds( arr => [...arr, item]);
             console.log(ownedIngreds)
         } else {

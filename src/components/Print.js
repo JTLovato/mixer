@@ -7,7 +7,6 @@ export default class Print extends Component {
                 onClick="window.print()"
                 className="sub-cat-indiv"
             >
-                <i className="fa fa-print"></i>
                 <h1>Print</h1>
             </button>
         )
