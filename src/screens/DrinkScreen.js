@@ -21,7 +21,7 @@ function DrinkScreen() {
     return (
         <div>
             {from &&
-                <div>
+                <div className="drink-screen">
                     <img 
                         className="drinkCardImage" 
                         src={`../img/${from['image']}`} 
@@ -30,16 +30,18 @@ function DrinkScreen() {
                             e.target.src = Image_Not_Found
                         }} 
                     alt="" />
-                    <h1 className="white-header">
-                        {from['name']}
-                    </h1>
-                    <div>
-                        <Ratings stars={from['rating']} />
+                    <div className="drink-info">
+                        <h1 className="white-header drink-title">
+                            {from['name']}
+                        </h1>
+                        <div className="ratings-bar">
+                            <Ratings stars={from['rating']} />
+                        </div>
+                        <p className="description white-header">
+                            {from['description']}
+                        </p>
+                        <FavoriteButtons id={from['id']}/>
                     </div>
-                    <p className="description white-header">
-                        {from['description']}
-                    </p>
-                    <FavoriteButtons id={from['id']}/>
                     <div className="ingredients-list">
                         <IngredientsList ingredients={from} />
                     </div>

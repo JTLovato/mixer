@@ -5,7 +5,7 @@ function Ratings(props) {
     let stars = props.stars
 
     return (
-        <div className="ratings-bar">
+        <div className="ratings-bar drink-card-ratings">
             <span>
                 <i
                 className={

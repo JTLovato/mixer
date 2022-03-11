@@ -194,7 +194,7 @@ a:visited {
 
 .drink-card h1,
 .drink-card h5 {
-  width: 100%;
+  width: 95%;
   text-align: left;
   padding-left: 10px;
   margin: 0;
@@ -554,3 +554,137 @@ input:checked + label .checkMark {
 }
 
 
+
+
+
+
+/* Desktop */
+
+
+@media (min-width: 767px) {
+
+.what-to-make-card {
+  height: 300px;
+  background-position: bottom;
+}
+
+.spilled-drink {
+  transform: rotate(60deg);
+  height: 500px;
+}
+
+.what-to-make-card-inner {
+  margin-top: -100px;
+}
+
+.what-to-make-card-inner h1 {
+  font-size: 350%;
+}
+
+.what-to-make-card-inner h4 {
+  font-size: 150%;
+}
+
+.hot-drinks-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hot-drinks-title {
+  width: 100%;
+
+}
+
+.drink-card {
+  width: calc(33vw - 40px);
+  position: relative;
+}
+
+.drinkCardImage {
+  width: 45%;
+  margin-right: 20px;
+}
+
+.drink-screen {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 10px 5%;
+}
+
+.drink-title {
+  width: 50%;
+  text-align: left;
+  height: 50px;
+}
+
+.ratings-bar {
+  padding-left: 0;
+  width: 100%;
+  position: absolute; 
+  top: 70px;
+}
+
+.description {
+  width: 100%;
+  padding-left: 0;
+  font-size: 120%;
+  position: absolute;
+  top: 100px;
+}
+
+.drink-info {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.fav-set {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.directions {
+  font-size: 200%;
+}
+
+.sub-cats {
+  width: 500px;
+}
+
+.toppings-list {
+  width: 80%;
+  margin: 10px 10%;
+}
+
+.toppings-list-item {
+  width: 250px;
+}
+
+.drink-card-ratings {
+  position: inherit;
+  top: 0;
+  padding-left: 7px;
+}
+
+.searched-drink {
+  width: 170px;
+  font-size: 150%;
+  font-weight: 700;
+}
+
+.search-container {
+  margin: 20px 10%;
+}
+
+
+
+
+
+
+
+
+
+}

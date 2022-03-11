@@ -11,7 +11,7 @@ function HotDrinks() {
     return (
         
         <div className="hot-drinks-container">
-            <h1 className="white-header">Hottest Drinks Now</h1>
+            <h1 className="white-header hot-drinks-title">Hottest Drinks Now</h1>
             <DrinkCard data={Data} />
             <DrinkCard data={Data} />
             <DrinkCard data={Data} />

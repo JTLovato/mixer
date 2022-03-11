@@ -13,7 +13,7 @@ function FavoriteButtons(props) {
     }
 
     return (
-        <div>
+        <div className="fav-set">
             <button onClick={addToFavorites} className="button-favorites">Add To Favs</button>
             <Link to="/favorites" favs={addToFavs} className="button-favorites">Favorites</Link>
         </div>
