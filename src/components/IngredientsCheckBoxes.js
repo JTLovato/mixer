@@ -34,16 +34,32 @@ function IngredientsCheckBoxes() {
 
     const [ownedIngreds, setOwnedIngreds] = useState([]);
 
+    const [ignoreIngreds, setIgnoreIngreds] =useState(false);
+
+    console.log(garnishes[0])
+
     // Adds each checked ingredient to your owned ingredients array
     const onClicks = (item) => {
-        if (ownedIngreds.includes(item) === false) {
+        if (ownedIngreds.includes(item)) {
+            // Fix this later to remove item
+        } else {
             setOwnedIngreds( arr => [...arr, item]);
             console.log(ownedIngreds)
-        } else {
-            // setOwnedIngreds( arr => arr.filter(item => !item))
-            console.log("Fix This Soon")
         }
+        console.log(ownedIngreds)
     };
+
+    const checkAllChange = () => {
+        if (ignoreIngreds == false) {
+            setIgnoreIngreds(true)
+            for (let h = 0; h < garnishes.length; h ++ ) {
+                ownedIngreds.push(garnishes[h])
+                console.log(ownedIngreds)
+            }
+        } else {
+            setIgnoreIngreds(false)
+        }
+    }
 
     // On click, takes owned ingredients array, and checks it through each recipe's ingredients.
     const submitFunction = (e) => {
@@ -105,10 +121,10 @@ function IngredientsCheckBoxes() {
                                     )
                                 })}
                             </div>
-                            <input className="accord" type="checkbox" id="tequila" />
-                            <label htmlFor="tequila" className="accord-title">
+                            <input className="accord" type="checkbox" id="tequilas" />
+                            <label htmlFor="tequilas" className="accord-title">
                                 <span className="accord-highlight"></span>
-                                Tequila</label>
+                                Tequilas</label>
                                 <div className="content drink-map">
                                     {tequilas.map((name, index) => {
                                         return (
@@ -130,10 +146,10 @@ function IngredientsCheckBoxes() {
                                         )
                                     })}
                             </div>
-                            <input className="accord" type="checkbox" id="gin" />
-                            <label htmlFor="gin" className="accord-title">
+                            <input className="accord" type="checkbox" id="gins" />
+                            <label htmlFor="gins" className="accord-title">
                                 <span className="accord-highlight"></span>
-                                Gin
+                                Gins
                             </label>
                             <div className="content drink-map">
                             {gins.map((name, index) => {
@@ -159,7 +175,7 @@ function IngredientsCheckBoxes() {
                             <input className="accord" type="checkbox" id="general_rum" />
                             <label htmlFor="general_rum" className="accord-title">
                                 <span className="accord-highlight"></span>
-                                Rum
+                                Rums
                             </label>
                             <div className="content drink-map">
                                 {general_rum.map((name, index) => {
@@ -182,10 +198,10 @@ function IngredientsCheckBoxes() {
                                     )
                                 })}
                             </div>
-                            <input className="accord" type="checkbox" id="brandy" />
-                            <label htmlFor="brandy" className="accord-title">
+                            <input className="accord" type="checkbox" id="brandies" />
+                            <label htmlFor="brandies" className="accord-title">
                                 <span className="accord-highlight"></span>
-                                Brandy
+                                Brandies
                             </label>
                             <div className="content drink-map">
                                 {brandys.map((name, index) => {
@@ -208,10 +224,10 @@ function IngredientsCheckBoxes() {
                                     )
                                 })}
                             </div>
-                            <input className="accord" type="checkbox" id="liqueur" />
-                            <label htmlFor="liqueur" className="accord-title">
+                            <input className="accord" type="checkbox" id="liqueurs" />
+                            <label htmlFor="liqueurs" className="accord-title">
                                 <span className="accord-highlight"></span>
-                                Liqueur
+                                Liqueurs
                             </label>
                             <div className="content drink-map">
                                 {liqueurs.map((name, index) => {
@@ -235,10 +251,10 @@ function IngredientsCheckBoxes() {
                                 })}
                             </div>
                         </div>
-                        <input className="accord" type="checkbox" id="wine" />
-                        <label htmlFor="wine" className="accord-title">
+                        <input className="accord" type="checkbox" id="wines" />
+                        <label htmlFor="wines" className="accord-title">
                             <span className="accord-highlight"></span>
-                            Wine
+                            Wines
                         </label>
                         <div className="content">
                             <input className="accord" type="checkbox" id="reds" />
@@ -457,6 +473,17 @@ function IngredientsCheckBoxes() {
                         Garnishes
                     </label>
                     <div className="content drink-map">
+                        <input 
+                            type="checkbox"
+                            name="checkAll"
+                            id="checkAll"
+                            className="check-all accordion-content"
+                            onChange={e => checkAllChange()}
+                        />
+                        <label htmlFor="checkAll" className="check-all-label">
+                            Ignore Garnishes?  
+                            <img src={Check} alt="" className="checkMark"></img> 
+                        </label>
                         {garnishes.map((name, index) => {
                             return (
                                 <>
@@ -479,12 +506,12 @@ function IngredientsCheckBoxes() {
                     </div>
                 </ul>
                 <input className="ingredients-submit" type="submit" value="Submit" />
-                <div className="owned-ingredients-list">
+                {/* <div className="owned-ingredients-list">
                     <h2 className="owned-title">What You Have So Far</h2>
                     {ownedIngreds.map( e =>
                     <div key={e} className="each-ingredient">{ e }</div>
                     )}
-                </div>
+                </div> */}
             </form>
             <ul>
                 {items.map(item => (

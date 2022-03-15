@@ -1,6 +1,6 @@
 import React from 'react';
 import IngredientsCheckBoxes from '../components/IngredientsCheckBoxes';
-import Data from '../Data'
+import Data from '../NewData'
 
 
 function WhatToMakeScreen() {
