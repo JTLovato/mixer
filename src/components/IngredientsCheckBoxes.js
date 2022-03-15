@@ -50,7 +50,7 @@ function IngredientsCheckBoxes() {
     };
 
     const checkAllChange = () => {
-        if (ignoreIngreds == false) {
+        if (ignoreIngreds === false) {
             setIgnoreIngreds(true)
             for (let h = 0; h < garnishes.length; h ++ ) {
                 ownedIngreds.push(garnishes[h])

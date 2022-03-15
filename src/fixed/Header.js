@@ -9,7 +9,7 @@ function Header() {
             <Link to="/">
                 <MainLogo />
             </Link>
-            <div className="navbar-container">
+            {/* <div className="navbar-container">
                 <input type="checkbox" name="" id="" />
                 <div className="hamburger-lines">
                     <span className="line line1"></span>
@@ -24,7 +24,7 @@ function Header() {
                     <li><a href="#food">Recipes</a></li>
                     <li><a href="#food">Glossery</a></li>
                 </ul>
-            </div>
+            </div> */}
         </nav>
     )
 }
