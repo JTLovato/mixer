@@ -48,10 +48,10 @@ function DrinkScreen() {
                     <p className="directions white-header">
                         {from['directions']}
                     </p>
-                    <div className="sub-cats">
+                    {/* <div className="sub-cats">
                         <IMadeIt />
                         <Print />
-                    </div>
+                    </div> */}
                     {from.drinkNotes &&
                         <DrinkNotes />
                     }   
