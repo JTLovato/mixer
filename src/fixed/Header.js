@@ -9,6 +9,9 @@ function Header() {
             <Link to="/">
                 <MainLogo />
             </Link>
+            <Link to="/glossary" className="glossary-link">
+                <h1>Glossary</h1>
+            </Link>
             {/* <div className="navbar-container">
                 <input type="checkbox" name="" id="" />
                 <div className="hamburger-lines">

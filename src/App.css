@@ -649,6 +649,73 @@ input:checked + label .checkMark {
   margin: 10%;
 }
 
+/* Glossary */
+
+.alphabet-each {
+  background-color: var(--tertiary-color);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  text-transform: uppercase;
+  margin: 4px;
+}
+
+.alphabet-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.letter {
+  color: var(--tertiary-color);
+  font-weight: 700;
+  font-size: 350%;
+  margin-top: 20px;
+}
+
+.word-each {
+  background-color: var(--tertiary-color);
+  border-radius: 5px;
+  text-align: left;
+  margin: 5px 15px;
+  padding: 10px;
+}
+
+.word-each h2 {
+  margin: 0;
+}
+
+.letter-each {
+    scroll-margin-top: 100px;
+}
+
+.glossary {
+  color: var(--tertiary-color);
+}
+
+.glossary-link {
+  color: var(--tertiary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.glossary-link h1 {
+  color:var(--tertiary-color);
+}
+
+.alphabet-sticky {
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(0, 0, 0, 80%);
+  width: 100%;
+}
 
 
 /* Desktop */
@@ -784,6 +851,27 @@ input:checked + label .checkMark {
 
 .link-container {
   width: 400px;
+}
+
+.letter-each {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.letter {
+  width: 100%;
+}
+
+.word-each {
+  width: 800px;
+}
+
+.letter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 
