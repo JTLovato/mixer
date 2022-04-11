@@ -1381,7 +1381,7 @@ const newData = {
             name: 'St Germain & Cranberry Cocktail',
             id: '166',
             image: 'st_germain_and_cranberry_cocktail.jpg',
-            ingredients:['vodka', 'cranberry juice', 'st. germain', 'lemon juice', 'simple syrup', 'lemon wheel'],
+            ingredients:['vodka', 'cranberry juice', 'st germain', 'lemon juice', 'simple syrup', 'lemon wheel'],
             directions: 'Add all 1oz vodka, 1oz juice, 1/2oz St. Germain, & 1/2oz lemon juice to a cocktail shaker. Fill it with ice and shake until cold. Strain the liquid into a glass. Garnish with a lemon wheel.',
             rating: '9',
             description: 'Got a bottle of St Germain and want to make a drink? Here\'s your new go-to St Germain cocktail! Alex and I have made it our goal to try all of the classic cocktails. But we\'re also experimenting with new and creative cocktails: which is where this one comes in! St Germain is very new to the scene, but it is a must have in your liquor cabinet. The unique flavor it brings to drinks has become a personal favorite of ours. It\'s sweet tart and perfectly balanced, with a bit of elderflower on the finish. It goes down very easily (so watch out!).',
@@ -1531,6 +1531,7 @@ const newData = {
                                 'rye whiskey',
                                 'japanese whiskey',
                                 'flavored whiskey',
+                                'whiskey',
                             ]
                         },
                         {

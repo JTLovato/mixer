@@ -36,8 +36,6 @@ function IngredientsCheckBoxes() {
 
     const [ignoreIngreds, setIgnoreIngreds] =useState(false);
 
-    console.log(garnishes[0])
-
     // Adds each checked ingredient to your owned ingredients array
     const onClicks = (item) => {
         if (ownedIngreds.includes(item)) {
@@ -70,11 +68,9 @@ function IngredientsCheckBoxes() {
                 });
                 if (containsAll === true) {
                     setNotFound(!notFound)
-                    console.log(notFound)
                     setMatchedDrinks( arr => [...arr, allDrinks[i] ])
                 } else {
                     setNotFound(!notFound)
-                    console.log(notFound)
                 }
             }
     }
