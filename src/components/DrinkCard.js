@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Ratings from './Ratings';
 import { Link } from 'react-router-dom';
 
@@ -7,11 +7,14 @@ function DrinkCard(props) {
     let drinkData = props.data.drinks
     // console.log(drinkData)
 
+    let [namedDrink, setNamedDrink] = useState(false)
+
     let drinkLength = drinkData.length
     let randomDrink = Math.floor(Math.random() * drinkLength);
 
     // Function below lists the ingredients with a comma between each and a period at the end.
     let newDrink = drinkData[randomDrink]
+
     for (let i = 0; i <= newDrink['ingredients'].length - 1; i++) {
         if (i !== newDrink['ingredients'].length - 1) {
             newDrinkIngredients.push(newDrink['ingredients'][i] + ", ")
@@ -29,6 +32,7 @@ function DrinkCard(props) {
     }
     
 
+
     return (
         <Link to={`/drink/${newDrink['name']}`} state={{ from: newDrink }}>
             <div className="drink-card">
@@ -37,7 +41,7 @@ function DrinkCard(props) {
                         e.target.onerror = null
                         e.target.src = '../img/drink_not_found.jpg'
                     }} 
-                    alt="" className="drink-card-image"
+                    alt={newDrink['name']} className="drink-card-image"
                 ></img>
                 <h1 >{newDrink['name']}</h1>
                 <Ratings stars={newDrink['rating']} />
@@ -46,7 +50,6 @@ function DrinkCard(props) {
             </div>
         </Link>
     )
-
 }
 
 export default DrinkCard

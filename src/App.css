@@ -717,6 +717,15 @@ input:checked + label .checkMark {
   width: 100%;
 }
 
+/* Loading and Message boxes */
+
+.warning,
+.message {
+  width: 100vw;
+  background-color: var(--tertiary-color);
+  font-size: 100%;
+}
+
 
 /* Desktop */
 
